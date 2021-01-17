@@ -1,0 +1,6 @@
+{
+	"/": {
+		"target": "https://werewolfio.herokuapp.com/",
+		"secure": true
+	}
+}

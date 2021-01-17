@@ -1,0 +1,7 @@
+
+  <span>Day-Time</span>
+
+<div style="text-align:center;color:orange;font-size:100px;">Count Down: {{ countDown$ | async }}</div>
+<br>
+<div *ngIf="(countDown$ | async) === 0" style="text-align:center;color:orange;font-size:100px;"></div>
+<br>

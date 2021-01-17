@@ -1,0 +1,19 @@
+<div>
+
+
+  <body>
+
+  <title> Discussion Time </title>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><
+
+  <div style="margin-top: 100px"></div>
+  <div style="text-align:center;color:orange;font-size:100px;">Count Down: {{ countDown$ | async }}</div>
+  <div *ngIf="(countDown$ | async) === 0" style="text-align:center;color:orange;font-size:100px;"></div>
+  <br><br><br><br><br><br><br><br><br><br>
+  <p style="text-align:center;color:orange;font-size:100px;">Discussion Time</p>
+
+
+  </body>
+
+</div>

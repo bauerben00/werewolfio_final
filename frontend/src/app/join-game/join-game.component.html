@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="addressForm" novalidate>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Lobby joinen</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input formControlName="code" matInput placeholder="Code Lobby">
+            <mat-error *ngIf="addressForm.controls['code'].hasError('required')">
+              Code is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input formControlName="vorname" matInput placeholder="Vorname">
+            <mat-error *ngIf="addressForm.controls['vorname'].hasError('required')">
+              Vorname is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="primary" mat-raised-button type="submit">Spiel joinen</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

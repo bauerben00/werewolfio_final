@@ -1,0 +1,66 @@
+<form [formGroup]="addressForm" novalidate>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Neue Lobby erstellen</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input required formControlName="firstName" matInput placeholder="Vorname">
+            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea required formControlName="votingTime" matInput placeholder="Voting Time in Sekunden"></textarea>
+            <mat-error *ngIf="addressForm.controls['votingTime'].hasError('required')">
+              Voting Time is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea required formControlName="discussionTime" matInput placeholder="Diskussion Time in Sekunden"></textarea>
+            <mat-error *ngIf="addressForm.controls['discussionTime'].hasError('required')">
+              Diskussion Time is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea required formControlName="maxCountPlayers" matInput placeholder="Number of Players"></textarea>
+            <mat-error *ngIf="addressForm.controls['maxCountPlayers'].hasError('required')">
+              Diskussion Time is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input required #numberWerewolves formControlName="numberWerewolves" matInput placeholder="Anzahl Werwölfe"
+                   type="number">
+            <mat-hint align="end">{{numberWerewolves.value.length}} / 2</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="onSubmit()" color="primary" mat-raised-button type="submit">Spiel erstellen</button>
+      <button (click)="generateCode()" color="primary" mat-raised-button type="submit">Code generieren</button>
+      <button (click)="startGame()" color="primary" mat-raised-button routerLink="/start-play" type="button">Spiel
+        starten
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</form>

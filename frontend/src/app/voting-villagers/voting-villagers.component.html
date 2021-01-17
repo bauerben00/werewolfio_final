@@ -1,0 +1,16 @@
+<p>voting-villagers works!</p>
+{{data.game.werewolves}}
+
+<br><br><br><br><br><br><br><br>
+
+<div style="margin-top: 100px"></div>
+<div style="text-align:center;color:orange;font-size:100px;">Count Down: {{ countDown$ | async }}</div>
+<div *ngIf="(countDown$ | async) === 0" style="text-align:center;color:orange;font-size:100px;"></div>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<div *ngFor="let p of data.game.players; let j=index">
+  <mat-card>
+    <mat-card-title [style.background-color]="data.isPlayerWerewolf(p) ? 'red' : 'lightgrey'">{{p.name}}</mat-card-title>
+    <mat-card-actions><button (click)="villagerVote(p)" >Send</button></mat-card-actions>
+  </mat-card>
+</div>
